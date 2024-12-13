@@ -1,0 +1,21 @@
+version: 1
+disable_existing_loggers: true
+
+
+formatters:
+    standard:
+        format: "[%(asctime)s] %(process)d %(levelname)s %(name)s:%(funcName)s:%(lineno)s - %(message)s"
+handlers:
+    console:
+        class: logging.StreamHandler
+        level: INFO
+        formatter: standard
+        stream: ext://sys.stdout
+
+loggers:
+    meta_ss:
+        level: INFO
+        handlers: [console]
+    s3:
+        level: INFO
+        handlers: [console]
